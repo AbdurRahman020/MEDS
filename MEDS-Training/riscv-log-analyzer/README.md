@@ -1,4 +1,4 @@
-# riscv-log-analyzer
+# riscv-log-analyzer v1
 
 A shell-based tool that reads RISC-V simulation log files, counts test results, and prints a summary report.
 
