@@ -1,4 +1,4 @@
-# riscv-log-analyzer
+# riscv-log-analyzer - MEDS Module 1 Cpastone
 
 A shell-based tool that reads RISC-V simulation log files, counts test results, and prints a summary report.
 
