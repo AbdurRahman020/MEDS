@@ -216,30 +216,6 @@ find /usr/include -name "*.c" | xargs wc -l | sort -rn | grep -v total | head -5
 **Output:**
 
 ```
-   146 /mnt/c/Users/arm20/Documents/GitHub/programming-fundamentals/ByteMeC/mathStuff.c
-   110 /mnt/c/Users/arm20/Documents/GitHub/programming-fundamentals/ByteMeC/matrixStuff.c
-    99 /mnt/c/Users/arm20/Documents/GitHub/programming-fundamentals/ByteMeC/hollowPatterns.c
-    87 /mnt/c/Users/arm20/Documents/GitHub/programming-fundamentals/ByteMeC/arrayMics.c
-    58 /mnt/c/Users/arm20/Documents/GitHub/programming-fundamentals/ByteMeC/studentDatabase.c
-```
-
-> **Note:** I didn't have a `/usr/include` folder, so I tested it on my own `.c` files instead.
-
----
-
-# Q5
-
-Write a one-liner pipeline that finds all `.c` files in `/usr/include`, counts lines in each, sorts by line count, and shows the top 5 largest files.
-
-## Answer
-
-```bash
-find /usr/include -name "*.c" | xargs wc -l | sort -rn | grep -v total | head -5
-```
-
-**Output:**
-
-```
   146 /usr/include/mathStuff.c
   110 /usr/include/matrixStuff.c
    99 /usr/include/hollowPatterns.c
