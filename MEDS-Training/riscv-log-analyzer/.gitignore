@@ -1,0 +1,28 @@
+# ---- riscv-log-analyzer outputs ----
+riscv-log-analyzer/output/
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Windows ----
+Thumbs.db
+desktop.ini
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Python (if used later) ----
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# ---- C / C++ (common in embedded/RISC-V work) ----
+*.o
+*.a
+*.elf
+*.bin
+*.hex
