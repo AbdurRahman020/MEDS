@@ -1,22 +1,22 @@
 # these are command names, not actual files
+# without .PHONY, make would look for files named 'all', 'test', etc.
 .PHONY: all test report clean help setup
 
 # run analyzer on all sample logs
 all:
 	@echo "=== Running analyzer on all test log files ==="
-
-	# run analyzer on sample log
-	@bash scripts/analyze.sh test_data/sample_sim.log || true
-
 	@echo ""
 
-	# run analyzer on passing log
-	@bash scripts/analyze.sh test_data/sample_pass.log || true
-
-	@echo ""
-
-	# run analyzer on failing log
-	@bash scripts/analyze.sh test_data/sample_fail.log || true
+	@# FAILED tracks if any analyzer call returned a non-zero exit code
+	@# all commands are chained with \ and ; because each recipe line runs in a separate shell
+	@# $$ is used instead of $ because make reserves $ for its own variable expansion
+	@FAILED=0; \
+	bash scripts/analyze.sh test_data/sample_sim.log || FAILED=1; \
+	echo ""; \
+	bash scripts/analyze.sh test_data/sample_pass.log || FAILED=1; \
+	echo ""; \
+	bash scripts/analyze.sh test_data/sample_fail.log || FAILED=1; \
+	echo "Exit code: $$FAILED"
 
 
 # run simple checks to verify script behavior
@@ -24,29 +24,23 @@ test:
 	@echo "=== Running tests ==="
 	@echo ""
 
-	# expect PASS verdict
 	@echo "Test 1: sample_pass.log - expecting PASS verdict"
-
-	# grep checks if the output contains "Verdict: PASS"
+	@# pipe output into grep — exits 0 if found, then && / || decide what to print
 	@bash scripts/analyze.sh test_data/sample_pass.log | grep "Verdict: PASS" > /dev/null \
 		&& echo "RESULT: OK" \
 		|| echo "RESULT: UNEXPECTED - sample_pass.log should have all passing tests"
 
 	@echo ""
 
-	# expect FAIL verdict
 	@echo "Test 2: sample_fail.log - expecting FAIL verdict"
-
 	@bash scripts/analyze.sh test_data/sample_fail.log | grep "Verdict: FAIL" > /dev/null \
 		&& echo "RESULT: OK" \
 		|| echo "RESULT: UNEXPECTED - sample_fail.log should have some failing tests"
 
 	@echo ""
 
-	# expect file-not-found error
 	@echo "Test 3: Missing file - expecting an error message"
-
-	# 2>&1 sends error messages into grep
+	@# 2>&1 redirects stderr into stdout so grep can read the error message
 	@bash scripts/analyze.sh nonexistent.log 2>&1 | grep "Error: File not found" > /dev/null \
 		&& echo "RESULT: OK" \
 		|| echo "RESULT: UNEXPECTED - should have printed an error"
@@ -60,22 +54,20 @@ report:
 	@bash scripts/generate_report.sh
 
 
-# delete generated files
+# delete all generated files inside output/
 clean:
 	@echo "Cleaning up generated files..."
-
-	# Remove everything inside output/
+	@# -rf removes directories and their contents without prompting
 	@rm -rf output/*
-
 	@echo "Done!"
 
 
-# run setup script
+# check that all required tools are installed
 setup:
 	@bash scripts/setup_env.sh
 
 
-# show available make commands
+# show all available make targets with descriptions
 help:
 	@echo "Available targets:"
 	@echo ""
