@@ -6,6 +6,12 @@
 # -o pipefail: a command inside a pipe fails
 set -euo pipefail
 
+# ANSI color codes for terminal output
+# these are escape sequences that terminals interpret as colors
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # NC = No Color, resets color back to normal after use
+
 # -----------------------------------------------
 # RISC-V Simulation Log Analyzer
 # Usage: ./analyze_log.sh <logfile> [options]
@@ -19,14 +25,14 @@ print_help() {
     echo "  <logfile>          Path to the simulation log file (required)"
     echo ""
     echo "Options:"
-    echo "  --format text|csv  Output format (default: text)"
-    echo "  --output <path>    Save output to a file instead of printing"
-    echo "  --verbose          Show extra details while running"
-    echo "  --help             Show this help message"
+    echo "  -f text|csv        Output format (default: text)"
+    echo "  -o <path>          Save output to a file instead of printing"
+    echo "  -v                 Show extra details while running"
+    echo "  -h                 Show this help message"
     echo ""
     echo "Examples:"
     echo "  $0 test_data/sample_fail.log"
-    echo "  $0 test_data/sample_fail.log --format csv --output output/report.csv"
+    echo "  $0 test_data/sample_fail.log -f csv -o output/report.csv"
 }
 
 # --- function 2: Analyze the log file and generate a report ---
@@ -133,10 +139,12 @@ analyze_log() {
         echo ""
 
         # final PASS/FAIL result
+        # -e enables interpretation of \e[ color codes
+        # $NC resets the color after the verdict so nothing else gets colored
         if [ "$FAIL" -gt 0 ]; then
-            echo "--- Verdict: FAIL ---"
+            echo -e "${RED}--- Verdict: FAIL ---${NC}"
         else
-            echo "--- Verdict: PASS ---"
+            echo -e "${GREEN}--- Verdict: PASS ---${NC}"
         fi
     fi
 
@@ -150,7 +158,7 @@ analyze_log() {
 }
 
 # -----------------------------------------------
-# Main program starts here
+# main program
 # -----------------------------------------------
 
 # default settings
@@ -159,49 +167,45 @@ OUTPUT=""
 VERBOSE=false
 LOG_FILE=""
 
-# read all command-line arguments
-while [ $# -gt 0 ]; do
-    case "$1" in
-        # show help message
-        --help)
-            print_help
-            exit 0
-            ;;
-        # set output format
-        --format)
-            # move to next argument
-            shift
-            FORMAT="$1"
+# getopts is a built-in bash tool for parsing short flags like -f or -o
+# the colon after a letter means that flag expects a value after it
+while getopts ":f:o:vh" opt; do
+    case "$opt" in
+        # -f sets the output format
+        f)
+            FORMAT="$OPTARG"
             # allow only text or csv
             if [ "$FORMAT" != "text" ] && [ "$FORMAT" != "csv" ]; then
-                echo "Error: --format must be 'text' or 'csv'" >&2
+                echo "Error: -f must be 'text' or 'csv'" >&2
                 exit 1
             fi
             ;;
-        # set output file path
-        --output)
-            # move to next argument
-            shift
-            OUTPUT="$1"
+        # -o sets the output file path
+        o)
+            OUTPUT="$OPTARG"
             ;;
-        # enable verbose mode
-        --verbose)
+        # -v enables verbose mode
+        v)
             VERBOSE=true
             ;;
-        # handle unknown options
-        -*)
-            echo "Error: Unknown option: $1" >&2
-            echo "Run '$0 --help' for usage." >&2
+        # -h shows help
+        h)
+            print_help
+            exit 0
+            ;;
+        # handle unknown flags
+        \?)
+            echo "Error: Unknown option: -$OPTARG" >&2
+            echo "Run '$0 -h' for usage." >&2
             exit 1
             ;;
-        # treat non-option argument as log file path
-        *)
-            LOG_FILE="$1"
-            ;;
     esac
-    # move to next argument
-    shift
 done
+
+# shift past all the parsed flags so $1 becomes the log file argument
+# OPTIND is the index of the next argument after the flags
+shift $(( OPTIND - 1 ))
+LOG_FILE="${1:-}"
 
 # check if log file argument is missing
 if [ -z "$LOG_FILE" ]; then
