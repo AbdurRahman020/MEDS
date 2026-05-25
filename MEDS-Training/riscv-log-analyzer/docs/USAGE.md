@@ -7,26 +7,28 @@ The main script. Give it a log file and it tells you what happened.
 ### Syntax
 
 ```bash
-bash scripts/analyze.sh <logfile> [--format text|csv] [--output <path>] [--verbose] [--help]
+bash scripts/analyze.sh [-f text|csv] [-o <path>] [-v] [-h] <logfile>
 ```
+
+> **Note:** Flags must come **before** the log file argument.
 
 ### Arguments
 
 **`<logfile>`** (required)
 Path to the `.log` file you want to analyze. The file must exist and follow the expected format (see below).
 
-**`--format text|csv`** (optional, default: `text`)
+**`-f text|csv`** (optional, default: `text`)
 Choose how the output is formatted.
 - `text` — human-readable report (good for reading in the terminal)
 - `csv` — comma-separated values (good for opening in Excel or processing further)
 
-**`--output <path>`** (optional)
+**`-o <path>`** (optional)
 Write the output to a file instead of printing it. The directory will be created automatically if it doesn't exist.
 
-**`--verbose`** (optional)
+**`-v`** (optional)
 Print extra information before the main output, like which file is being read and what format is being used. Useful for debugging.
 
-**`--help`** (optional)
+**`-h`** (optional)
 Print the usage message and exit.
 
 ---
@@ -65,7 +67,7 @@ Run these from the project root directory.
 |---|---|
 | `make all` | Run analyze.sh on all three test log files |
 | `make test` | Run basic checks to verify the scripts work correctly |
-| `make report` | Run generate_report.sh to create `output/summary_report.txt` |
+| `make report` | Run generate_report.sh to create `output/summary_reports.txt` and `output/summary_reports.html` |
 | `make clean` | Delete everything inside `output/` |
 | `make setup` | Check that all required tools (bash, grep, awk, etc.) are installed |
 | `make help` | Show a list of all available make targets |
@@ -74,7 +76,9 @@ Run these from the project root directory.
 
 ## generate_report.sh
 
-Runs `analyze.sh` on every `.log` file in `test_data/` and combines the results into a single file at `output/summary_report.txt`.
+Runs `analyze.sh` on every `.log` file in `test_data/` and combines the results into two output files:
+- `output/summary_reports.txt` — plain text summary of all log files
+- `output/summary_reports.html` — HTML table with one row per log file
 
 ```bash
 bash scripts/generate_report.sh
@@ -86,7 +90,7 @@ make report
 
 ## setup_env.sh
 
-Checks that all the command-line tools used by this project are installed on your system.
+Checks that all the command-line tools used by this project are installed on your system: `bash`, `mkdir`, `date`, `grep`, `awk`.
 
 ```bash
 bash scripts/setup_env.sh
