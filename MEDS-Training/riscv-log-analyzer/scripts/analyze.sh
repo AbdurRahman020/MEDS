@@ -1,25 +1,27 @@
 #!/bin/bash
 
-# Stop the script if:
-# -e:  any command fails
-# -u: an undefined variable is used
-# -o pipefail: a command inside a pipe fails
+# stop the script if:
+#   -e:  any command fails
+#   -u: an undefined variable is used
+#   -o pipefail: a command inside a pipe fails
 set -euo pipefail
 
 # ANSI color codes for terminal output
 # these are escape sequences that terminals interpret as colors
 GREEN='\033[0;32m'
 RED='\033[0;31m'
-NC='\033[0m' # NC = No Color, resets color back to normal after use
+# NC = No Color, resets color back to normal after use
+NC='\033[0m'
 
-# -----------------------------------------------
+
+# -------------------------------------------------------------------
 # RISC-V Simulation Log Analyzer
-# Usage: ./analyze_log.sh <logfile> [options]
-# -----------------------------------------------
+# Usage: ./analyze.sh [-f text|csv] [-o <path>] [-v] [-h] <logfile>
+# -------------------------------------------------------------------
 
-# --- function 1: Show help/usage instructions ---
+# --- function 1: show help/usage instructions ---
 print_help() {
-    echo "Usage: $0 <logfile> [options]"
+    echo "Usage: $0 [-f text|csv] [-o <path>] [-v] [-h] <logfile>"
     echo ""
     echo "Arguments:"
     echo "  <logfile>          Path to the simulation log file (required)"
@@ -32,7 +34,7 @@ print_help() {
     echo ""
     echo "Examples:"
     echo "  $0 test_data/sample_fail.log"
-    echo "  $0 test_data/sample_fail.log -f csv -o output/report.csv"
+    echo "  $0 -f csv -o output/report.csv test_data/sample_fail.log"
 }
 
 # --- function 2: Analyze the log file and generate a report ---
@@ -85,7 +87,7 @@ analyze_log() {
     fi
 
     # -----------------------------------------------
-    # Print the final report
+    # print the final report
     # -----------------------------------------------
 
     if [ "$FORMAT" = "csv" ]; then
