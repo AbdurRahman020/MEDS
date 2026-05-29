@@ -51,9 +51,9 @@ echo ""
 # print the final location of the generated report
 echo "Summary report generated at: $OUTPUT_DIR"
 
-# -----------------------------------------------
+# ------------------------
 # HTML report generation
-# -----------------------------------------------
+# ------------------------
 
 echo ""
 echo "Generating HTML report..."

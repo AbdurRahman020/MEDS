@@ -16,7 +16,8 @@ NC='\033[0m'
 
 # -------------------------------------------------------------------
 # RISC-V Simulation Log Analyzer
-# Usage: ./analyze.sh [-f text|csv] [-o <path>] [-v] [-h] <logfile>
+#
+# usage: ./analyze.sh [-f text|csv] [-o <path>] [-v] [-h] <logfile>
 # -------------------------------------------------------------------
 
 # --- function 1: show help/usage instructions ---
@@ -37,7 +38,7 @@ print_help() {
     echo "  $0 -f csv -o output/report.csv test_data/sample_fail.log"
 }
 
-# --- function 2: Analyze the log file and generate a report ---
+# --- function 2: analyze the log file and generate a report ---
 analyze_log() {
     # store the log file path passed to the function
     local LOGFILE="$1"
@@ -86,9 +87,9 @@ analyze_log() {
         MAX_TEST=$(grep "${MAX_TIME}s" "$LOGFILE" | grep "TEST" | awk '{print $5}' | head -1 || true)
     fi
 
-    # -----------------------------------------------
+    # ------------------------
     # print the final report
-    # -----------------------------------------------
+    # ------------------------
 
     if [ "$FORMAT" = "csv" ]; then
         # CSV format output
@@ -159,9 +160,9 @@ analyze_log() {
     fi
 }
 
-# -----------------------------------------------
+# --------------
 # main program
-# -----------------------------------------------
+# --------------
 
 # default settings
 FORMAT="text"
