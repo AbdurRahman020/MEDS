@@ -1,0 +1,13 @@
+# build output
+bin/
+build/
+
+# object and dependency files
+*.o
+*.d
+
+# vs code
+.vscode/
+
+# valgrind output
+vgcore.*
