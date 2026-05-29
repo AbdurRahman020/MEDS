@@ -1,4 +1,4 @@
-# riscv-log-analyzer - MEDS Module 1 Capstone
+# riscv-log-analyzer - MEDS Module 1 Grand Assignment
 
 A shell-based tool that reads RISC-V simulation log files, counts test results, and prints a summary report.
 
@@ -22,8 +22,8 @@ Built as the Module 1 capstone project for MEDS Lab.
 No installation needed. Just clone the repo and make the scripts executable:
 
 ```bash
-git clone <your-repo-url>
-cd riscv-log-analyzer
+git clone https://github.com/AbdurRahman020/MEDS
+cd MEDS/MED-Training/riscv-log-analyzer
 chmod +x scripts/*.sh
 ```
 
