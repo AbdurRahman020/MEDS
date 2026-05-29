@@ -109,7 +109,7 @@ Example:
 
 ---
 
-## Sample Output
+## Sample Output (verified)
 
 **Decoding `mixed.hex`:**
 ```bash
