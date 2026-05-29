@@ -14,10 +14,10 @@ all: $(BIN)
 
 # build rule for final executable
 $(BIN): $(SRC)
-	@mkdir -p bin                      # ensure output directory exists
-	@echo "Building riscv-decoder..."  # build start message
-	@$(CC) $(CFLAGS) -o $@ $^          # compile all sources into binary
-	@echo "Done → $(BIN) [release]"    # success message
+	@mkdir -p bin                      		  # ensure output directory exists
+	@echo "Building riscv-decoder..."  		  # build start message
+	@$(CC) $(CFLAGS) -o $@ $^          		  # compile all sources into binary
+	@echo "Done → $(BIN) [build complete]"    # success message
 
 # debug build (for gdb/valgrind)
 debug: $(SRC)
