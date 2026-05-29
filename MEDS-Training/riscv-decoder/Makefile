@@ -52,7 +52,7 @@ valgrind: debug
 
 # clean build artifacts
 clean:
-	@echo "Cleaning build output..."
+	@echo "Cleaning build artifacts..."
 	@rm -rf bin/
 	@echo "Done."
 
