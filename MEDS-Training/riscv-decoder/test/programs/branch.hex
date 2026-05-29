@@ -1,0 +1,20 @@
+# Branch instructions test file
+# Format: one 32-bit hex instruction per line
+# All branches use offset=8 (jumping 2 instructions ahead) unless noted
+
+# BEQ  x1, x2, 8       -> imm=8, rs2=x2, rs1=x1, funct3=0x0, opcode=0x63
+00208463
+# BNE  x1, x2, 8       -> imm=8, rs2=x2, rs1=x1, funct3=0x1, opcode=0x63
+00209463
+# BLT  x1, x2, 8       -> imm=8, rs2=x2, rs1=x1, funct3=0x4, opcode=0x63
+0020C463
+# BGE  x1, x2, 8       -> imm=8, rs2=x2, rs1=x1, funct3=0x5, opcode=0x63
+0020D463
+# BLTU x1, x2, 8       -> imm=8, rs2=x2, rs1=x1, funct3=0x6, opcode=0x63
+0020E463
+# BGEU x1, x2, 8       -> imm=8, rs2=x2, rs1=x1, funct3=0x7, opcode=0x63
+0020F463
+# BNE  x1, x2, -8      -> imm=-8 (backward branch)
+FE209CE3
+# BEQ  x0, x0, 0       -> infinite loop / self-branch
+00000063
