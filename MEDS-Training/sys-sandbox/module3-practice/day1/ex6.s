@@ -1,10 +1,14 @@
-# C pseudocode:
 # int n;
 # scanf("%d", &n);
 # if ((n & 1) == 0)
 #     printf("Even");
 # else
 #     printf("Odd");
+
+
+.data
+    even_msg: .asciiz "Even"
+    odd_msg:  .asciiz "Odd"
 
 .text
 .globl main
@@ -34,7 +38,3 @@ even:
 exit:
     addi a0, zero, 10         # ecall 10 = exit program
     ecall
-
-.data
-even_msg: .asciiz "Even"
-odd_msg:  .asciiz "Odd"

@@ -1,3 +1,9 @@
+# int a, b;
+# scanf("%d", &a);
+# scanf("%d", &b);
+# printf("%d", a + b);
+
+
 .text
 .globl main
 
@@ -6,7 +12,7 @@ main:
     ecall                   # waits for input
     mv   a1, a0             # save first number
 
-    addi a0, zero, 5
+    addi a0, zero, 5        # ecall 5 = read integer
     ecall                   # waits for second input
     mv   a2, a0             # save second number
 
