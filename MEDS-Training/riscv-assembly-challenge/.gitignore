@@ -1,0 +1,16 @@
+# Venus / RARS simulator artifacts
+*.log
+*.out
+*.bin
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+*.swp
+*~
+
+# Screenshots working files (keep final screenshots/ folder, ignore temp exports)
+screenshots/*.tmp
