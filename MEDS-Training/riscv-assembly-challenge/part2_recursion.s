@@ -19,6 +19,7 @@ int main() {
 }
 */
 
+
 .data
 # cache[0..20], pre-filled with -1 = "not yet computed"
 cache: .word -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1

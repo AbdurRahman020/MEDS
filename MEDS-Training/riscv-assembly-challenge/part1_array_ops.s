@@ -6,21 +6,25 @@ int sum_array(int *ptr, int size) {
     for (int i = 0; i < size; i++) sum += ptr[i];
     return sum;
 }
+
 int find_min(int *ptr, int size) {
     int min = ptr[0];
     for (int i = 1; i < size; i++) if (ptr[i] < min) min = ptr[i];
     return min;
 }
+
 int find_max(int *ptr, int size) {
     int max = ptr[0];
     for (int i = 1; i < size; i++) if (ptr[i] > max) max = ptr[i];
     return max;
 }
+
 int count_negative(int *ptr, int size) {
     int count = 0;
     for (int i = 0; i < size; i++) if (ptr[i] < 0) count++;
     return count;
 }
+
 int main() {
     printf("Sum: %d\n", sum_array(array, 12));
     printf("Min: %d\n", find_min(array, 12));
@@ -29,6 +33,7 @@ int main() {
     return 0;
 }
 */
+
 
 .data
 array:     .word 5, -3, 12, -8, 0, 45, -1, 22, -17, 9, -100, 33
@@ -43,7 +48,7 @@ newline:   .string "\n"
 .globl main
 
 # sum_array: a0 = array_ptr, a1 = size -> a0 = sum
-# Leaf function: only uses t-regs, no stack frame needed
+# leaf function: only uses t-regs, no stack frame needed
 sum_array:
     li   t0, 0                    # sum = 0
     li   t1, 0                    # i = 0
@@ -114,7 +119,7 @@ count_neg_done:
     ret
 
 # print_result: a0 = label address, a1 = int value -> prints "<label><value>\n"
-# Leaf function: only uses t-regs, no stack frame needed
+# leaf function: only uses t-regs, no stack frame needed
 print_result:
     mv   t1, a0                  # save label address
     mv   t0, a1                  # save value
