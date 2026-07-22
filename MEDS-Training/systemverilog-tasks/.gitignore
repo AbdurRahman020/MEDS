@@ -1,0 +1,24 @@
+# --- Verilator / simulation build output ---
+output/
+obj_dir/
+*.vcd
+*.fst
+*.log
+*.jou
+
+# --- Verilator generated executables ---
+Vtb
+V*.exe
+
+# --- draw.io backup / lock files ---
+*.drawio.bkp
+*.drawio.bak
+*~
+.~lock.*
+
+# --- VS Code ---
+.vscode/
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
