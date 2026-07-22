@@ -1,0 +1,115 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="g7IIpH_tgLHY6ToqrKea">
+    <mxGraphModel dx="1614" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Op2G-AjHf1rU16wjVqke-1" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="rd_en">
+          <mxGeometry relative="1" x="1" y="-20" as="geometry">
+            <mxPoint x="20" y="-20" as="offset" />
+            <mxPoint x="610" y="537.5714285714287" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-2" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="rd_data">
+          <mxGeometry relative="1" x="1" y="30" as="geometry">
+            <mxPoint x="30" y="30" as="offset" />
+            <mxPoint x="610" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-3" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="rd_valid">
+          <mxGeometry relative="1" x="1" y="30" as="geometry">
+            <mxPoint x="30" y="30" as="offset" />
+            <mxPoint x="610" y="642.7142857142858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-4" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="clk">
+          <mxGeometry relative="1" x="1" y="-10" as="geometry">
+            <mxPoint x="-10" y="-10" as="offset" />
+            <mxPoint x="382.2857142857142" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-5" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="rst_n">
+          <mxGeometry relative="1" x="1" y="10" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+            <mxPoint x="487.42857142857133" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-6" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="537.5714285714287" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-7" connectable="0" parent="Op2G-AjHf1rU16wjVqke-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="wr_en" vertex="1">
+          <mxGeometry relative="1" x="0.301" y="-1" as="geometry">
+            <mxPoint x="-44" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-8" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="590.1428571428571" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-9" connectable="0" parent="Op2G-AjHf1rU16wjVqke-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="wr_data" vertex="1">
+          <mxGeometry relative="1" x="0.2439" y="-1" as="geometry">
+            <mxPoint x="-57" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-10" edge="1" parent="1" source="Op2G-AjHf1rU16wjVqke-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="642.7142857142858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-11" connectable="0" parent="Op2G-AjHf1rU16wjVqke-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="wr_ready" vertex="1">
+          <mxGeometry relative="1" x="-0.0114" y="2" as="geometry">
+            <mxPoint x="-65" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;FIFO&lt;/font&gt;" vertex="1">
+          <mxGeometry height="210" width="210" x="330" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Synchronous FIFO Controller with flags&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="460" x="195" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-14" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.668;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;almost_empty&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="1" y="14" as="geometry">
+            <mxPoint x="-4" y="10" as="offset" />
+            <mxPoint x="520" y="695" as="sourcePoint" />
+            <mxPoint x="520" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-15" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.668;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="empty">
+          <mxGeometry height="50" relative="1" width="50" x="1" y="10" as="geometry">
+            <mxPoint x="-10" y="10" as="offset" />
+            <mxPoint x="390" y="695" as="sourcePoint" />
+            <mxPoint x="390" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-16" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.668;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="350" y="695" as="sourcePoint" />
+            <mxPoint x="350" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-17" connectable="0" parent="Op2G-AjHf1rU16wjVqke-16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="count" vertex="1">
+          <mxGeometry relative="1" x="0.1415" y="1" as="geometry">
+            <mxPoint y="32" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-18" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.668;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="full">
+          <mxGeometry height="50" relative="1" width="50" x="1" y="10" as="geometry">
+            <mxPoint x="-10" y="10" as="offset" />
+            <mxPoint x="434.71000000000004" y="695" as="sourcePoint" />
+            <mxPoint x="434.71000000000004" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Op2G-AjHf1rU16wjVqke-19" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=0.668;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;almost_full&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="1" y="10" as="geometry">
+            <mxPoint x="-10" y="10" as="offset" />
+            <mxPoint x="480" y="695" as="sourcePoint" />
+            <mxPoint x="480" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
