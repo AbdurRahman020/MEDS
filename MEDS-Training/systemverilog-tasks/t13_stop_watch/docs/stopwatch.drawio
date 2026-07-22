@@ -1,0 +1,133 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="9R810p-Xihc163wgUpza">
+    <mxGraphModel dx="1143" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tjjWE-qId4DSvRlarATj-3" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;endSize=3;sketch=1;curveFitting=1;jiggle=2;" target="tjjWE-qId4DSvRlarATj-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-19" connectable="0" parent="tjjWE-qId4DSvRlarATj-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="tenth_tick" vertex="1">
+          <mxGeometry relative="1" x="0.0067" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-31" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;startSize=3;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="clk">
+          <mxGeometry relative="1" x="1" y="20" as="geometry">
+            <mxPoint x="-20" y="-20" as="offset" />
+            <mxPoint x="274" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-32" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;startSize=3;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="rst">
+          <mxGeometry relative="1" x="1" y="20" as="geometry">
+            <mxPoint x="-20" y="-20" as="offset" />
+            <mxPoint x="274" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;hachureGap=4;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="Clock Divider (Tick Generator)&lt;br&gt;&lt;br&gt;Output: tenth_tick" vertex="1">
+          <mxGeometry height="60" width="190" x="354" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-5" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;endSize=3;sketch=1;curveFitting=1;jiggle=2;" target="tjjWE-qId4DSvRlarATj-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-20" connectable="0" parent="tjjWE-qId4DSvRlarATj-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="tenths_rollover" vertex="1">
+          <mxGeometry relative="1" x="-0.0267" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-44" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;fontFamily=Comic Sans MS;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="314" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-46" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;fontFamily=Comic Sans MS;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="294" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;hachureGap=4;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;div&gt;Tenths Counter&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(0–9)&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Outputs: tenths, tenths_rollover&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="210" x="344" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-27" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;endSize=3;sketch=1;curveFitting=1;jiggle=2;" target="tjjWE-qId4DSvRlarATj-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-30" connectable="0" parent="tjjWE-qId4DSvRlarATj-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="sec_ones_rollover" vertex="1">
+          <mxGeometry relative="1" x="-0.1562" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-36" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;fontFamily=Comic Sans MS;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="294" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0-71tMTYc8N1X88G7WA-2" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="314" y="545" />
+            </Array>
+            <mxPoint x="314" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;hachureGap=4;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;div&gt;Seconds Ones Counter&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(0–9)&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Outputs: sec_ones, sec_ones_rollover&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="334" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-28" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;endSize=3;sketch=1;curveFitting=1;jiggle=2;" target="tjjWE-qId4DSvRlarATj-16" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-29" connectable="0" parent="tjjWE-qId4DSvRlarATj-28" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="sec_tens_rollover" vertex="1">
+          <mxGeometry relative="1" x="-0.1181" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-42" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;fontFamily=Comic Sans MS;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="314" y="655" />
+              <mxPoint x="314" y="550" />
+            </Array>
+            <mxPoint x="314" y="545" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-47" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;fontFamily=Comic Sans MS;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="294" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;hachureGap=4;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;div&gt;Seconds Tens Counter&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(0–5)&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Outputs: sec_tens, sec_tens_rollover&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="334" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-15" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;endSize=3;sketch=1;curveFitting=1;jiggle=2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="449" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-23" connectable="0" parent="tjjWE-qId4DSvRlarATj-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="min, sec_tens, sec_ones, tenths" vertex="1">
+          <mxGeometry relative="1" x="0.0733" y="4" as="geometry">
+            <mxPoint x="-4" y="29" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-43" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;fontFamily=Comic Sans MS;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="314" y="765" />
+              <mxPoint x="314" y="660" />
+            </Array>
+            <mxPoint x="314" y="655" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-48" edge="1" parent="1" source="tjjWE-qId4DSvRlarATj-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;endArrow=oval;endFill=1;endSize=3;fontFamily=Comic Sans MS;startArrow=classic;startFill=1;startSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="294" y="685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;hachureGap=4;fontFamily=Comic Sans MS;sketch=1;curveFitting=1;jiggle=2;" value="&lt;div&gt;Minute Counter&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(0–9)&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Output: minute&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="379" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="tjjWE-qId4DSvRlarATj-49" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;sketch=1;curveFitting=1;jiggle=2;" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 24px;&quot;&gt;4 Digit Stopwatch&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="298" y="240" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
