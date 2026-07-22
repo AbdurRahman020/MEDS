@@ -1,0 +1,102 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="85gHz1zKHuBj32U4DHtc">
+    <mxGraphModel dx="1372" dy="875" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-1" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;fontFamily=Comic Sans MS;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" value="" vertex="1">
+          <mxGeometry height="60" width="100" x="224" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-12" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.8333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" value="d">
+          <mxGeometry relative="1" x="1" y="10" as="geometry">
+            <mxPoint x="-10" y="-10" as="offset" />
+            <mxPoint x="185" y="687.8292682926831" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-15" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.16666666666666666;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=oval;endFill=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;endSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="225" y="548" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-16" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" value="c">
+          <mxGeometry relative="1" x="1" y="-10" as="geometry">
+            <mxPoint x="-10" y="10" as="offset" />
+            <mxPoint x="185" y="667.8292682926831" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-2" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;numInputs=3;fontFamily=Comic Sans MS;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" value="" vertex="1">
+          <mxGeometry height="60" width="100" x="355" y="638" as="geometry" />
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-21" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" value="f">
+          <mxGeometry relative="1" x="0.9797" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="665" y="548.2307692307693" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-3" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;numInputs=3;fontFamily=Comic Sans MS;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" value="" vertex="1">
+          <mxGeometry height="60" width="100" x="545" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-11" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.16666666666666666;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=oval;endFill=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;endSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="325" y="433" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-14" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" value="b">
+          <mxGeometry relative="1" x="1" y="10" as="geometry">
+            <mxPoint x="-10" y="-10" as="offset" />
+            <mxPoint x="185" y="547.8292682926831" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-17" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.8333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=oval;endFill=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;endSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="255" y="668" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-4" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;numInputs=3;fontFamily=Comic Sans MS;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" value="" vertex="1">
+          <mxGeometry height="60" width="100" x="355" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-13" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=oval;endFill=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;endSize=3;sketch=1;curveFitting=1;jiggle=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="305" y="688" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-5" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;fontFamily=Comic Sans MS;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" value="" vertex="1">
+          <mxGeometry height="60" width="100" x="355" y="418" as="geometry" />
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-8" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" target="Pt9XUQtT-Nuude2vsIKt-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" value="a">
+          <mxGeometry height="50" relative="1" width="50" x="-1" y="-9" as="geometry">
+            <mxPoint x="-9" y="-9" as="offset" />
+            <mxPoint x="184" y="433" as="sourcePoint" />
+            <mxPoint x="224" y="433" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-10" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" target="Pt9XUQtT-Nuude2vsIKt-5" value="~a">
+          <mxGeometry relative="1" x="-0.9355" y="15" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-18" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.16666666666666666;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" target="Pt9XUQtT-Nuude2vsIKt-3" value="z_n">
+          <mxGeometry relative="1" x="0.0706" y="19" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-19" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" target="Pt9XUQtT-Nuude2vsIKt-3" value="y_n">
+          <mxGeometry relative="1" x="-0.6889" y="14" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-20" edge="1" parent="1" source="Pt9XUQtT-Nuude2vsIKt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.8333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;sketch=1;curveFitting=1;jiggle=2;" target="Pt9XUQtT-Nuude2vsIKt-3" value="x_n">
+          <mxGeometry relative="1" x="-0.0632" y="-19" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pt9XUQtT-Nuude2vsIKt-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=24;fontFamily=Comic Sans MS;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" value="&amp;nbsp;f = (b + c + d)(a&#39; + b + c)(a&#39; + d) via NOR gates" vertex="1">
+          <mxGeometry height="30" width="548" x="151" y="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
