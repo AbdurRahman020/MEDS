@@ -22,6 +22,8 @@ tb/
 ├── tb_top.sv              self-checking testbench for the whole multiplier
 docs/
 ├── known-issues.md        write-up of the -128 multiplicand bug
+├── booth_algorithm.drawio editable datapath/FSM diagram
+├── booth_algorithm.png    exported image of the diagram
 README.md
 ```
 
@@ -42,6 +44,10 @@ I worked through a few examples by hand before writing any RTL, which helped a l
 figuring out exactly when the shift should happen and what `Q-1` is actually for.
 
 ## FSM
+
+![Booth multiplier datapath and controller FSM](docs/booth_algorithm.png)
+
+*(editable source: `docs/booth_algorithm.drawio`)*
 
 Kept the controller as small as possible - 3 states:
 
