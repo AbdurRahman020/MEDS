@@ -15,3 +15,5 @@ transcript
 .vscode/
 .DS_Store
 !sim/.gitkeep
+*.bkp
+*.dtmp
