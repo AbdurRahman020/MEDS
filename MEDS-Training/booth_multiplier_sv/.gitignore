@@ -1,0 +1,16 @@
+# simulation outputs
+sim/*
+*.vvp
+*.vcd
+*.fst
+*.fst.hier
+
+# common simulator junk
+*.log
+work/
+*.wlf
+transcript
+
+# editor / OS
+.vscode/
+.DS_Store
