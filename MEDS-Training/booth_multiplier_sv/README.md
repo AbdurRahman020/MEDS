@@ -43,7 +43,7 @@ this 8 times (once per bit) gives the full 16-bit signed product in `{A, Q}`.
 I worked through a few examples by hand before writing any RTL, which helped a lot with
 figuring out exactly when the shift should happen and what `Q-1` is actually for.
 
-## FSM
+## Datapath & Controller, and FSM 
 
 ![Booth multiplier datapath and controller FSM](docs/booth_algorithm.png)
 
