@@ -8,15 +8,15 @@ Each task is self-contained in its own folder, built and simulated with [Verilat
 
 | Folder | Task | Topic |
 |---|---|---|
-| `t1_gates_demo` | Task 1 | Hello Gate — AND/OR/XOR demo |
-| `t2_self_check_tb` | Task 2 | Self-checking testbench pattern |
-| `t3_adder` | Task 3 | Half adder (assign vs always_comb) + full adder |
-| `t4_nor_gates` | Task 4 | NOR-only realization |
-| `t5_4bit_parity` | Task 5 | 4-bit parity generator |
-| `t6_decoder_3x8` | Task 6 | 3-to-8 decoder from 2-to-4 decoders |
-| `t7_lead_zero_counter` | Task 7 | 32-bit leading zero counter |
-| `t8_min_term` | Task 8 | Σm(1,2,3,6,7) via 4x1 MUX + majority via 2:1 MUXes |
-| `t9_barrel_shifter` | Task 9 | Single-position shifter + 4-bit barrel shifter |
+| `t01_gates_demo` | Task 1 | Hello Gate — AND/OR/XOR demo |
+| `t02_self_check_tb` | Task 2 | Self-checking testbench pattern |
+| `t03_adder` | Task 3 | Half adder (assign vs always_comb) + full adder |
+| `t04_nor_gates` | Task 4 | NOR-only realization |
+| `t05_4bit_parity` | Task 5 | 4-bit parity generator |
+| `t06_decoder_3x8` | Task 6 | 3-to-8 decoder from 2-to-4 decoders |
+| `t07_lead_zero_counter` | Task 7 | 32-bit leading zero counter |
+| `t08_min_term` | Task 8 | Σm(1,2,3,6,7) via 4x1 MUX + majority via 2:1 MUXes |
+| `t09_barrel_shifter` | Task 9 | Single-position shifter + 4-bit barrel shifter |
 | `t10_up_down_counter` | Task 10 | 4-bit up-down counter, async reset |
 | `t11_synchronizer` | Task 11 | 2-flop reset synchroniser |
 | `t12_freq_divider` | Task 12 | Modulo-10 frequency divider (T flip-flops) |
