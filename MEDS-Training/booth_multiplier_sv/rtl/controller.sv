@@ -1,8 +1,9 @@
-module controller (
+module controller #(
+    parameter int WIDTH = 8
+)(
     input  logic clk,
     input  logic rst,
     input  logic start,
-    input  logic iter_done,   // high when the last Booth iteration is reached
 
     output logic load,
     output logic shift_en,
@@ -14,6 +15,10 @@ module controller (
     typedef enum logic [1:0] {IDLE, COMPUTE, DONE} state_t;
     state_t state, next_state;
 
+    // tracks remaining Booth iterations, now internal to the FSM
+    logic [$clog2(WIDTH+1)-1:0] count;
+    logic                       iter_done;
+
     // state register
     always_ff @(posedge clk) begin
         if (rst)
@@ -21,6 +26,18 @@ module controller (
         else
             state <= next_state;
     end
+
+    // iteration counter: loaded to WIDTH when a new op starts, decremented once per Booth iteration while shifting
+    always_ff @(posedge clk) begin
+        if (rst)
+            count <= '0;
+        else if (load)
+            count <= WIDTH;
+        else if (shift_en)
+            count <= count - 1'b1;
+    end
+
+    assign iter_done = (count == 1);
 
     // next-state and output logic
     always_comb begin
@@ -52,6 +69,10 @@ module controller (
             DONE: begin
                 // indicate that the multiplication is complete
                 done       = 1'b1;
+                next_state = IDLE;
+            end
+
+            default: begin
                 next_state = IDLE;
             end
         endcase
