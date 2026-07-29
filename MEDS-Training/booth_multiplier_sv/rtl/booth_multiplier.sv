@@ -12,14 +12,13 @@ module booth_multiplier (
 );
 
     // control signals between the controller and datapath
-    logic load, shift_en, iter_done;
+    logic load, shift_en;
 
     // controls the overall multiplication process using an FSM
-    controller u_controller (
+    controller #(.WIDTH(8)) u_controller (
         .clk       (clk),
         .rst       (rst),
         .start     (start),
-        .iter_done (iter_done),
         .load      (load),
         .shift_en  (shift_en),
         .busy      (busy),
@@ -34,7 +33,6 @@ module booth_multiplier (
         .shift_en     (shift_en),
         .multiplicand (multiplicand),
         .multiplier   (multiplier),
-        .iter_done    (iter_done),
         .product      (product)
     );
 
