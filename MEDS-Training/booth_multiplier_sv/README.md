@@ -8,22 +8,21 @@ a self-checking testbench instead of eyeballing waveforms.
 ## What's in here
 
 ```
-rtl/
-├── booth_multiplier.sv   top-level module, wires up controller + datapath
-├── controller.sv         FSM (IDLE -> COMPUTE -> DONE)
-├── datapath.sv           registers, wires up the submodules below
-├── booth_encoder.sv       decodes Q0,Q-1 into add_en/sub_en
-├── alu.sv                 groups adder_subtractor + shift_register
-├── adder_subtractor.sv    does A+M / A-M / hold
-├── shift_register.sv      arithmetic right shift of {A,Q,Q-1}
-├── counter.sv             tracks iterations remaining
-tb/
-├── tb_controller.sv       tests the FSM on its own
-├── tb_top.sv              self-checking testbench for the whole multiplier
 docs/
-├── known-issues.md        write-up of the -128 multiplicand bug
-├── booth_algorithm.drawio editable datapath/FSM diagram
-├── booth_algorithm.png    exported image of the diagram
+├── known-issues.md                               write-up of the -128 multiplicand bug
+├── booth_algorithm.drawio                        editable datapath/FSM/ALU diagram
+├── booth_algorithm_datapath_and_controller.png   exported image of the top-level datapath/controller diagram
+├── booth_algorithm_ALU.png                       exported image of the ALU diagram
+├── booth_algorithm_FSM.png                       exported image of the FSM diagram
+rtl/
+├── booth_multiplier.sv                           top-level module, wires up controller + datapath
+├── controller.sv                                 FSM (IDLE -> COMPUTE -> DONE), also holds the iteration counter
+├── datapath.sv                                   registers (M, A, Q, Q-1), wires up the alu
+├── alu.sv                                        Booth encoding + add/subtract + shift, all in one combinational block
+tb/
+├── tb_controller.sv                              tests the FSM on its own
+└──tb_top.sv                                      self-checking testbench for the whole multiplier
+.gitignore
 README.md
 ```
 
@@ -37,15 +36,29 @@ multiplier (Q0) and the bit below it (Q-1):
 - `10` -> subtract the multiplicand from the accumulator
 - `00` or `11` -> do nothing
 
-After that you do an arithmetic right shift of the combined `{A, Q, Q-1}` register. Doing
+After that you do an arithmetic right shift of the combined `{A, Q, Q`<sub>-1</sub>`}` register. Doing
 this 8 times (once per bit) gives the full 16-bit signed product in `{A, Q}`.
 
 I worked through a few examples by hand before writing any RTL, which helped a lot with
-figuring out exactly when the shift should happen and what `Q-1` is actually for.
+figuring out exactly when the shift should happen and what `Q`<sub>-1</sub> is actually for.
 
-## Datapath & Controller, and FSM 
+## Datapath & Controller
 
-![Booth multiplier datapath and controller FSM](docs/booth_algorithm.png)
+<p align="center">
+  <img width="600" src="docs/booth_algorithm_datapath_and_controller.png" alt="Booth multiplier datapath and controller">
+</p>
+
+## ALU
+
+<p align="center">
+  <img width="600" src="docs/booth_algorithm_ALU.png" alt="Booth multiplier ALU">
+</p>
+
+## Finite State Machine
+
+<p align="center">
+  <img width="500" src="docs/booth_algorithm_FSM.png" alt="Booth multiplier FSM">
+</p>
 
 *(editable source: `docs/booth_algorithm.drawio`)*
 
@@ -61,19 +74,21 @@ Kept the controller as small as possible - 3 states:
 
 ## Datapath
 
-Split into small single-purpose blocks instead of one big module:
+- **Registers** (inside `datapath.sv`) - holds `M`, `A`, `Q`, `Q`<sub>-1</sub>`. Priority is `rst` >
+  `load` > `shift_en` > hold, same as the muxes in front of each register in the diagram
+  above. Only sequential (`always_ff`) part of the datapath - `alu.sv` below is all
+  combinational.
+- **alu** - takes `a_reg`/`m_reg`/`q_reg`/`q_m1`, outputs `a_next`/`q_next`/`q_m1_next`:
+  - encoding: `op_en = q_reg[0] ^ q_m1` (add or subtract needed), `sub_en = q_reg[0] & op_en`
+    (which one)
+  - add/subtract: one adder reused for both - `sub_en` inverts `M` and doubles as carry-in,
+    so `A - M` is just `A + ~M + 1`, no separate subtractor needed
+  - shift: arithmetic right shift of `{A, Q, Q`<sub>-1</sub>`}`
 
-- **Registers** (inside `datapath.sv`) - holds `M`, `A`, `Q`, `Q-1`. Loads on `load`,
-  updates on `shift_en`, otherwise holds. This is the only sequential (`always_ff`) part
-  of the datapath - everything else below is pure combinational logic.
-- **booth_encoder** - looks at `Q0`/`Q-1` and outputs `add_en`/`sub_en`
-- **alu** - just wraps the next two blocks together:
-  - **adder_subtractor** - does `A+M`, `A-M`, or holds `A`, based on `add_en`/`sub_en`
-  - **shift_register** - arithmetic right shift of the combined `{A, Q, Q-1}`, producing
-    `a_next`/`q_next`/`q_m1_next`
-- **counter** - down-counter, asserts `iter_done` on the last required iteration
+Counter isn't a separate block - it's a down-counter (`count`) inside `controller.sv`,
+`iter_done` is just `count == 1`.
 
-`product[15:0]` is just `{A, Q}` read straight off the registers once `done` is high.
+`product[15:0]` is `{A, Q}` read off the registers once `done` is high.
 
 ## Verification
 
@@ -85,13 +100,13 @@ test automatically, no waveform checking needed. It runs:
   the values most likely to break something
 - 500 randomized signed operand pairs
 
-`tb_controller.sv` checks the FSM by itself, faking the datapath's counter so it doesn't
-depend on the rest of the design being correct.
+`tb_controller.sv` checks the FSM on its own - counter's inside `controller.sv` now, so
+this doesn't touch `datapath.sv` or `alu.sv` at all.
 
 The edge-case sweep currently turns up a real bug when `multiplicand = -128` -
 see `docs/known-issues.md` for the root cause and the fix.
 
-## Challenges / things I got wrong at first
+## Challenges
 
 - Initially I had `iter_done` triggering one cycle too late, which added an extra wasted
   clock cycle at the end of every multiplication. Fixed by checking `counter == 1` instead
