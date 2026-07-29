@@ -3,19 +3,19 @@ module tb_controller;
     logic clk;
     logic rst;
     logic start;
-    logic iter_done;
 
     logic load;
     logic shift_en;
     logic busy;
     logic done;
 
+    localparam int WIDTH = 8;
+
     // instantiate the controller DUT
-    controller dut (
+    controller #(.WIDTH(WIDTH)) dut (
         .clk       (clk),
         .rst       (rst),
         .start     (start),
-        .iter_done (iter_done),
         .load      (load),
         .shift_en  (shift_en),
         .busy      (busy),
@@ -25,22 +25,6 @@ module tb_controller;
     // Generate a 10 ns clock
     initial clk = 1'b0;
     always #5 clk = ~clk;
-
-    localparam int WIDTH = 8;
-    int count;
-
-    // simple counter model to generate iter_done for testing
-    always_ff @(posedge clk) begin
-        if (rst)
-            count <= 0;
-        else if (load)
-            count <= WIDTH;
-        else if (shift_en)
-            count <= count - 1;
-    end
-
-    // assert iter_done during the last iteration
-    assign iter_done = (count == 1);
 
     initial begin
         // apply reset
