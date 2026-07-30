@@ -1,6 +1,6 @@
 # MEDS
 
-Projects, practice work, and assignments completed during my internship at MEDS Lab, UET Lahore (Summer Training Programme 2026).
+Projects, practice work, and assignments completed during my internship at MEDS Lab, UET Lahore (Summer Training Programme 2026)
 
 ## Structure
 
@@ -23,12 +23,12 @@ MEDS-Training/
 
 | Module | Topic | Deliverable |
 |---|---|---|
-| 1 | Linux & Shell Fundamentals | `riscv-log-analyzer` |
-| 2 | C, Memory, RISC-V Instruction Encoding | `riscv-decoder` |
-| 3 | RISC-V ISA & Assembly | `riscv-assembly-challenge` |
-| 4 | SystemVerilog Project  | `radix2-booth-multiplier` |
+| 1 | Development Environment, Shell & Git | `riscv-log-analyzer` |
+| 2 | C Language for Hardware Engineers | `riscv-decoder` |
+| 3 | RISC-V Instruction Set Architecture | `riscv-assembly-challenge` |
+| 4 | SystemVerilog for Digital Design  | `radix2-booth-multiplier` |
 
-Each project folder has its own README with build and run instructions.
+Each project folder has its own README with build and run instructions
 
 ## License
 
