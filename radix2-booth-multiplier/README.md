@@ -74,7 +74,7 @@ Kept the controller as small as possible - 3 states:
 
 ## Datapath
 
-- **Registers** (inside `datapath.sv`) - holds `M`, `A`, `Q`, `Q`<sub>-1</sub>`. Priority is `rst` >
+- **Registers** (inside `datapath.sv`) - holds `M`, `A`, `Q`, `Q`<sub>-1</sub>. Priority is `rst` >
   `load` > `shift_en` > hold, same as the muxes in front of each register in the diagram
   above. Only sequential (`always_ff`) part of the datapath - `alu.sv` below is all
   combinational.
