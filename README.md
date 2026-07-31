@@ -1,6 +1,12 @@
-# MEDS
+# Maktab-e-Digital Systems (MEDS)
 
-Projects, practice work, and assignments completed during my internship at MEDS Lab, UET Lahore (Summer Training Programme 2026)
+[![SystemVerilog](https://img.shields.io/badge/SystemVerilog-C51A4A?style=flat&logoColor=white)](https://en.wikipedia.org/wiki/SystemVerilog)
+[![C](https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![Platform](https://img.shields.io/badge/Platform-Linux-FCC624?style=flat&logo=linux&logoColor=black)](https://www.kernel.org/)
+[![License](https://img.shields.io/github/license/AbdurRahman020/MEDS)](LICENSE)
+[![Repo Size](https://img.shields.io/github/repo-size/AbdurRahman020/MEDS)](https://github.com/AbdurRahman020/MEDS)
+
+Projects, practice work, and assignments completed during my internship at **MEDS Lab, UET Lahore** as part of the **Summer Training Programme 2026**.
 
 ## Structure
 
@@ -29,7 +35,3 @@ MEDS-Training/
 | 4 | SystemVerilog for Digital Design  | `radix2-booth-multiplier` |
 
 Each project folder has its own README with build and run instructions
-
-## License
-
-Apache-2.0
