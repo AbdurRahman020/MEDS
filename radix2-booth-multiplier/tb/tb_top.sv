@@ -113,11 +113,6 @@ module tb_top;
         $display("TESTS COMPLETE: %0d passed, %0d failed", pass_count, fail_count);
         $display("--------------------------------------------------");
 
-        if (fail_count == 0)
-            $display("RESULT: PASS");
-        else
-            $display("RESULT: FAIL");
-
         $finish;
     end
 
