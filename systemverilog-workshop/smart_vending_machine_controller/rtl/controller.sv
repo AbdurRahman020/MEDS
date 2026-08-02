@@ -1,36 +1,36 @@
 module controller (
-    input  logic      clk,
-    input  logic      reset,
-    input  logic      select_water,
-    input  logic      select_juice,
-    input  logic      select_chocolate,
-    input  logic      select_chips,
-    input  logic      cancel,
-    input  logic      refill,
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       select_water,
+    input  logic       select_juice,
+    input  logic       select_chocolate,
+    input  logic       select_chips,
+    input  logic       cancel,
+    input  logic       refill,
 
-    // status signals received from the datapath
-    input  logic       sufficient_balance,
-    input  logic       product_available,
-    input  logic       max_balance,
-    input  logic       selection_valid,
-    input  logic       change_nonzero,
-    input  logic [1:0] selected_product,
+    // status signals from the datapath
+    input  logic        sufficient_balance,
+    input  logic        product_available,
+    input  logic        max_balance,
+    input  logic        selection_valid,
+    input  logic        change_nonzero,
+    input  logic [1:0]  selected_product,
 
     // control signals sent to the datapath
-    output logic       increment_balance,
-    output logic       clear_balance,
-    output logic       decrement_stock,
-    output logic       refill_stock,
-    output logic       dispense_enable,
-    output logic       return_change_enable,
+    output logic        increment_balance,
+    output logic        clear_balance,
+    output logic        decrement_stock,
+    output logic        refill_stock,
+    output logic        dispense_enable,
+    output logic        return_change_enable,
 
-    // status outputs for the top-level module
-    output logic       out_of_stock,
-    output logic       insufficient_balance,
-    output logic       transaction_complete
+    // status outputs to the top-level module
+    output logic        out_of_stock,
+    output logic        insufficient_balance,
+    output logic        transaction_complete
 );
 
-    // fsm states
+    // fsm state definitions
     typedef enum logic [2:0] {
         IDLE,
         DISPENSE,
@@ -56,13 +56,11 @@ module controller (
 
         case (state)
             IDLE: begin
-                // give priority to cancel and refill requests
                 if (cancel)
                     next_state = CANCEL;
                 else if (refill)
                     next_state = REFILL;
                 else if (selection_valid) begin
-                    // check stock first, then verify balance
                     if (!product_available)
                         next_state = OUT_OF_STOCK;
                     else if (!sufficient_balance)
@@ -72,7 +70,7 @@ module controller (
                 end
             end
 
-            // these states complete their action in one clock cycle
+            // these states perform their action for one cycle before returning to IDLE
             DISPENSE:      next_state = IDLE;
             INSUFFICIENT:  next_state = IDLE;
             OUT_OF_STOCK:  next_state = IDLE;
@@ -83,9 +81,9 @@ module controller (
         endcase
     end
 
-    // output logic
+    // output logic: generates control signals based on the current state
     always_comb begin
-        // default all outputs to inactive
+        // default values to prevent unintended latches
         increment_balance    = 1'b0;
         clear_balance        = 1'b0;
         decrement_stock      = 1'b0;
@@ -97,39 +95,40 @@ module controller (
         transaction_complete = 1'b0;
 
         case (state)
-            // allow coins to be accepted while waiting for user input
+
+            // accept money while waiting for a valid selection or another user action
             IDLE: begin
                 increment_balance = 1'b1;
             end
 
-            // restore all product stocks to their initial values
+            // Refill all product stock.
             REFILL: begin
                 refill_stock = 1'b1;
             end
 
-            // complete a successful purchase
+            // dispense the selected product, update stock, return any remaining change, and clear balance
             DISPENSE: begin
                 dispense_enable      = 1'b1;
                 decrement_stock      = 1'b1;
-                return_change_enable = 1'b1;
+                return_change_enable = change_nonzero;
                 clear_balance        = 1'b1;
                 transaction_complete = 1'b1;
             end
 
-            // indicate that more balance is required
+            // notify the user that more money is required
             INSUFFICIENT: begin
                 insufficient_balance = 1'b1;
             end
 
-            // indicate that the selected product is unavailable
+            // notify the user that the selected product is unavailable
             OUT_OF_STOCK: begin
                 out_of_stock = 1'b1;
             end
 
-            // return the current balance and cancel the transaction
+            // cancel the transaction, clear the balance, and return any inserted money
             CANCEL: begin
                 clear_balance        = 1'b1;
-                return_change_enable = 1'b1;
+                return_change_enable = change_nonzero;
             end
 
             default: ;

@@ -384,7 +384,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="VH7_TSSGUjsgfbpTLkNK" name="datapath &amp; controller">
-        <mxGraphModel dx="1117" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+        <mxGraphModel dx="2793" dy="1948" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -1655,8 +1655,8 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="y_uuEanF9gdh6QtRhlJD-1" value="&lt;div&gt;DISPENSE&lt;/div&gt;&lt;div&gt;-------------------------------------&lt;/div&gt;&lt;div&gt;dispense_enable = 1&lt;/div&gt;&lt;div&gt;decrement_stock = 1&lt;/div&gt;&lt;div&gt;return_change_enable = 1&lt;/div&gt;&lt;div&gt;clear_balance = 1&lt;/div&gt;&lt;div&gt;transaction_complete = 1&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="800" y="175" width="180" height="180" as="geometry"/>
+                <mxCell id="y_uuEanF9gdh6QtRhlJD-1" value="&lt;div&gt;DISPENSE&lt;/div&gt;&lt;div&gt;-------------------------------------&lt;/div&gt;&lt;div&gt;dispense_enable = 1&lt;/div&gt;&lt;div&gt;decrement_stock = 1&lt;/div&gt;&lt;div&gt;return_change_enable = change_nonzero&lt;/div&gt;&lt;div&gt;clear_balance = 1&lt;/div&gt;&lt;div&gt;transaction_complete = 1&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="808" y="170" width="190" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="2aeZQEXP8s1XDxD2ipu4-2" value="reset = 1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" parent="1" source="y_uuEanF9gdh6QtRhlJD-2" edge="1">
                     <mxGeometry x="1" y="-14" relative="1" as="geometry">
@@ -1673,7 +1673,7 @@
                 <mxCell id="y_uuEanF9gdh6QtRhlJD-4" value="&lt;div&gt;OUT_OF_STOCK&lt;/div&gt;&lt;div&gt;---------------------------&lt;/div&gt;&lt;div&gt;out_of_stock = 1&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="150" y="100" width="130" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="y_uuEanF9gdh6QtRhlJD-6" value="&lt;div&gt;CANCEL&lt;/div&gt;&lt;div&gt;------------------------&lt;/div&gt;&lt;div&gt;clear_balance = 1&lt;/div&gt;&lt;div&gt;return_change_enable = 1&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                <mxCell id="y_uuEanF9gdh6QtRhlJD-6" value="&lt;div&gt;CANCEL&lt;/div&gt;&lt;div&gt;------------------------&lt;/div&gt;&lt;div&gt;clear_balance = 1&lt;/div&gt;&lt;div&gt;return_change_enable = change_nonzero&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="250" y="500" width="165" height="165" as="geometry"/>
                 </mxCell>
                 <mxCell id="y_uuEanF9gdh6QtRhlJD-8" value="&lt;div&gt;REFILL&lt;/div&gt;&lt;div&gt;------------------&lt;/div&gt;&lt;div&gt;refill_stock = 1&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">

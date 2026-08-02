@@ -123,7 +123,7 @@ module datapath (
     logic [3:0] water_stock, juice_stock, chocolate_stock, chips_stock;
     logic       dec_water, dec_juice, dec_chocolate, dec_chips;
 
-    // decrement stock only for the dispensed product.
+    // decrement stock only for the dispensed product
     assign dec_water     = decrement_stock & (active_product == WATER);
     assign dec_juice     = decrement_stock & (active_product == JUICE);
     assign dec_chocolate = decrement_stock & (active_product == CHOCOLATE);
