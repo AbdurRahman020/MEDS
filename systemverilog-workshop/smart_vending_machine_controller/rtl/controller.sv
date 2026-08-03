@@ -42,6 +42,9 @@ module controller (
 
     state_t state, next_state;
 
+    // flags whether selected_product currently decodes to a valid product encoding
+    logic selected_product_ok;
+
     // state register
     always_ff @(posedge clk) begin
         if (reset)
@@ -60,7 +63,7 @@ module controller (
                     next_state = CANCEL;
                 else if (refill)
                     next_state = REFILL;
-                else if (selection_valid) begin
+                else if (selection_valid && selected_product_ok) begin
                     if (!product_available)
                         next_state = OUT_OF_STOCK;
                     else if (!sufficient_balance)
@@ -96,12 +99,12 @@ module controller (
 
         case (state)
 
-            // accept money while waiting for a valid selection or another user action
+            // increment the balance when a coin is inserted, unless the maximum balance has been reached
             IDLE: begin
-                increment_balance = 1'b1;
+                increment_balance = ~max_balance;
             end
 
-            // Refill all product stock.
+            // refill all product stock
             REFILL: begin
                 refill_stock = 1'b1;
             end
@@ -132,6 +135,15 @@ module controller (
             end
 
             default: ;
+        endcase
+    end
+
+    // output logic: flags whether the selected product is valid
+    always_comb begin
+        selected_product_ok = 1'b0;
+        case (selected_product)
+            2'b00, 2'b01, 2'b10, 2'b11: selected_product_ok = 1'b1;
+            default:                    selected_product_ok = 1'b0;
         endcase
     end
 

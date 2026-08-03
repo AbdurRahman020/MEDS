@@ -46,7 +46,7 @@ module datapath (
     // encode the selected product
     assign selected_product = select_water ? WATER : select_juice ? JUICE : select_chocolate ? CHOCOLATE : CHIPS;
 
-    // store the selected product so it remains available during the dispense cycle, since selection inputs are only pulses
+    // store the selected product so it remains available during the dispense cycle
     logic [1:0] active_product;
     always_ff @(posedge clk) begin
         if (reset)
