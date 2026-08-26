@@ -33,12 +33,12 @@ module tb_top;
     task automatic run_test(input logic signed [7:0] a, input logic signed [7:0] b);
         logic signed [15:0] expected;
         begin
-            @(posedge clk);
+            @(negedge clk);
             multiplicand = a;
             multiplier   = b;
             start        = 1'b1;
 
-            @(posedge clk);
+            @(negedge clk);
             start = 1'b0;
 
             // wait for multiplication to complete
@@ -54,7 +54,7 @@ module tb_top;
                 pass_count++;
             end
 
-            @(posedge clk);
+            @(negedge clk);
         end
     endtask
 
@@ -67,9 +67,9 @@ module tb_top;
         multiplier   = '0;
 
         // apply reset
-        repeat (2) @(posedge clk);
+        repeat (2) @(negedge clk);
         rst = 1'b0;
-        @(posedge clk);
+        @(negedge clk);
 
         // directed test cases
         run_test(8'sd5,     8'sd9);      // positive x positive
