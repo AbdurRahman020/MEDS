@@ -1,19 +1,21 @@
-# RISC-V Assembly Challenge
+# RISC-V Assembly Challenge - MEDS Module 3 Grand Assignment
 
 MEDS Lab • Module 3: RISC-V ISA
 
-A three-part RISC-V assembly challenge covering array processing, recursion with memoization, and hand-encoding/decoding of the six base instruction formats (R, I, S, B, U, J).
+A three-part RISC-V assembly challenge covering array processing, recursion (memoized Fibonacci, Tower of Hanoi, and merge sort), and hand-encoding/decoding of the six base instruction formats (R, I, S, B, U, J).
 
 ## Repository Structure
 
 ```
 riscv-assembly-challenge/
-├── README.md               # This file
+├── README.md                     # This file
 ├── .gitignore
-├── part1_array_ops.s       # Part 1: Array processing
-├── part2_recursion.s       # Part 2: Recursive algorithm (memoized Fibonacci)
-├── part3_encoding.s        # Part 3: Instruction encoder/decoder
-├── screenshots/            # Venus screenshots showing output
+├── part1_array_ops.s             # Part 1: Array processing
+├── part2a_fibonacci.s            # Part 2a: Recursive Fibonacci with memoization
+├── part2b_tower_of_hanoi.s       # Part 2b: Recursive Tower of Hanoi
+├── part2c_merge_sort.s           # Part 2c: Recursive merge sort
+├── part3_encoding.s              # Part 3: Instruction encoder/decoder
+├── screenshots/                  # Venus screenshots showing output
 └── docs/
     ├── ENCODING_WORKSHEET.md   # Hand-encoded instructions (worked by hand)
     ├── PRIVILEGED_SUMMARY.md   # Privileged spec self-study notes
@@ -22,10 +24,10 @@ riscv-assembly-challenge/
 
 ## Build / Run Instructions
 
-All three `.s` files are written for the **Venus** RISC-V simulator (RARS-compatible syntax).
+All `.s` files are written for the **Venus** RISC-V simulator (RARS-compatible syntax).
 
 1. Open [Venus](https://venus.cs61c.org/) or a local RARS installation.
-2. Load the desired file (`part1_array_ops.s`, `part2_recursion.s`, or `part3_encoding.s`).
+2. Load the desired file (`part1_array_ops.s`, `part2a_fibonacci.s`, `part2b_tower_of_hanoi.s`, `part2c_merge_sort.s`, or `part3_encoding.s`).
 3. Assemble and run. Each program prints its own labeled output and exits via `ecall 10`.
 4. Step through with breakpoints to inspect registers/memory where noted in comments.
 
@@ -40,13 +42,31 @@ Defines a 12-element signed `.data` array (including negative values) and implem
 
 `main` calls each function in turn and prints results with labels (`Sum:`, `Min:`, `Max:`, `Negative count:`). All functions are leaf functions (t-registers only); `main` saves/restores `ra` since it makes calls.
 
-## Part 2 — Recursive Algorithm (`part2_recursion.s`)
+## Part 2a — Recursive Fibonacci (`part2a_fibonacci.s`)
 
 Implements **recursive Fibonacci with memoization**, using a `.data` cache array (`cache[0..20]`, pre-filled with `-1` to mark "not yet computed").
 
 - `fib(n)` checks base cases (`n == 0`, `n == 1`), then checks the cache before recursing.
 - Follows calling convention properly: `ra`, `s0` (holds `n`), and `s1` (holds `fib(n-1)` across the second recursive call) are saved/restored per stack frame.
 - `main` prints `fib(10) = 55`, `fib(15) = 610`, `fib(20) = 6765`, with later calls reusing cache entries built up by earlier ones.
+
+## Part 2b — Tower of Hanoi (`part2b_tower_of_hanoi.s`)
+
+Implements the classic **Tower of Hanoi** recursion: `hanoi(n, from, to, aux)` moves `n` disks from peg `from` to peg `to` using `aux` as the spare peg.
+
+- Base case: `n == 0` returns immediately.
+- Recursive case: move `n-1` disks out of the way onto `aux`, print the move of disk `n` from `from` to `to`, then move the `n-1` disks from `aux` onto `to`.
+- `n` and the three peg characters (`s0`–`s3`) are callee-saved across both recursive calls, since `hanoi` recurses twice per frame.
+- `main` runs `hanoi(4, 'A', 'C', 'B')`, printing each move as `Move disk <n> from <from> to <to>`.
+
+## Part 2c — Merge Sort (`part2c_merge_sort.s`)
+
+Implements recursive **merge sort** on a 12-element signed `.data` array, using a same-size `temp[]` buffer as merge scratch space.
+
+- `merge_sort(arr, left, right)` — base case `left >= right`; otherwise splits at `mid = (left + right) / 2`, recurses on both halves, then calls `merge`.
+- `merge(arr, left, mid, right)` — merges the two sorted halves into `temp[]` via standard two-pointer comparison, then copies `temp[left..right]` back into `arr`.
+- Callee-saved registers hold `arr_ptr`, `left`/`right`/`mid` in `merge_sort` and `i`/`j`/`k`/`mid`/`right`/`left` in `merge`, since both functions recurse or loop across calls.
+- `main` sorts the array in place and prints `Sorted array: ` followed by the 12 sorted values.
 
 ## Part 3 — Instruction Encoding (`part3_encoding.s`)
 
